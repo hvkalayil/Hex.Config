@@ -1,0 +1,170 @@
+/* General */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E5F6FA;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+#loadingAnimation{
+    display: none;
+    transform: scale(0);
+    transition: 500ms;
+}
+
+/* Header */
+
+.brand-heading {
+    justify-content: space-evenly;
+}
+
+.brand {
+    z-index: 2;
+    padding-left: 40px;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.header {
+    justify-content: space-between;
+    padding: 5px 10px;
+    height: 100px;
+}
+
+.toggle-btn {
+    justify-content: space-evenly;
+    transition: 600ms;
+}
+
+.boxes {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.blue-box,
+.red-box {
+    height: 80px;
+    width: 80px;
+    filter: blur(5px);
+}
+
+.blue-box {
+    background-color: rgba(69, 85, 222, .6);
+    z-index: 0;
+}
+
+.red-box {
+    background-color: rgba(222, 69, 69, .6);
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.toggle-btn img {
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.toggle-btn img:hover {
+    transform: scale(1.15);
+}
+
+
+#darkThemeIcon {
+    display: none;
+}
+
+/* LANDING PART */
+#landingPage {
+    transition: 600ms;
+}
+
+.landing-text,
+.landing-graphic {
+    text-align: left;
+    width: 50%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.landing-text h1 {
+    font-size: 3rem;
+}
+
+.landing-text p {
+    margin-left: 20px;
+    line-height: 40px;
+}
+
+.landing-text img {
+    display: inline;
+    vertical-align: middle;
+}
+
+.attribution {
+    font-size: 0.5rem;
+}
+
+/* Buttons */
+.actions {
+    justify-content: space-evenly;
+}
+
+.actions div {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.create-btn {
+    border: 5px inset rgba(69, 85, 222, .6);
+}
+
+.create-btn:hover {
+    background-color: rgba(69, 85, 222, .6);
+}
+
+.upload-btn {
+    border: 5px inset rgba(222, 69, 69, .6);
+}
+
+.upload-btn:hover {
+    background-color: rgba(222, 69, 69, .6);
+}
+
+
+/* FOOTER */
+footer {
+    font-size: 0.75rem;
+}
+
+
+
+/* FOR MOBILE */
+@media only screen and (max-width: 600px) {
+    .row-break {
+        flex-direction: column;
+    }
+
+    .landing-text,
+    .landing-graphic {
+        width: 100%;
+    }
+}

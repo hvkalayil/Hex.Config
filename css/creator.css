@@ -1,0 +1,73 @@
+#paletteCreator,
+#configUploader {
+    display: none;
+    transition: 600ms;
+    transform: scale(0) translate(1400px);
+}
+
+.color-panel,
+.output-panel {
+    width: 50%;
+    padding: 20px;
+}
+
+.color-picker{
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+.color-picker:disabled{
+    cursor: not-allowed;
+}
+
+.palette-item {
+    align-items: flex-end;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.palette-text {
+    width: 75%;
+}
+
+.unlocked:hover {
+    color: rgba(120, 120, 120, 0.616);
+}
+
+.palette-item h2 {
+    margin-bottom: 0;
+}
+
+.locked {
+    cursor: not-allowed;
+    color: rgba(110, 108, 108, 0.2);
+}
+
+.scrollable-container {
+    width: 100%;
+    height: 280px;
+    overflow-y: scroll;
+}
+
+
+.scrollable-container::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: rgba(110, 108, 108, 0.616);
+    border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background-color: rgb(100, 98, 98);
+    border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .color-panel,
+    .output-panel {
+        width: 100%;
+        padding: 0;
+    }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex.Config</title>
+
+    <!-- Online Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Local Imports -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/creator.css">
+    <link rel="stylesheet" href="css/uploader.css">
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="57x57" href="src/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="src/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="src/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="src/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="src/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="src/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="src/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="src/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="src/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body onload="setupTheme()" id="body">
+
+    <!-- <body onload="actionHandler(false)" id="body"> -->
+    <!-- HEADER -->
+    <header>
+        <div class="row header">
+            <div class="col brand-heading">
+                <h1 class="brand" onclick="goHome()">
+                    HEX.<br>
+                    CONFIG
+                </h1>
+                <div class="boxes">
+                    <div class="blue-box"></div>
+                    <div class="red-box"></div>
+                </div>
+            </div>
+            <div class="col toggle-btn">
+                <span onclick="toggleTheme()">
+                    <img id="lightThemeIcon" src="src/lightmode.png" alt="Light Theme Icon">
+                    <img id="darkThemeIcon" src="src/darkmode.png" alt="Dark Theme Icon">
+                </span>
+            </div>
+        </div>
+        <hr>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- LANDING PAGE -->
+        <div id="landingPage" class="row row-break">
+            <div class="col landing-text">
+                <h1>
+                    Create a color palette <br>
+                    for your new project.
+                </h1>
+
+                <p>
+                    🍊 View how your palette affects components <br>
+                    🧅 Ensure Accesibility<br>
+                    🥭 Automated and smart suggestions
+                </p>
+
+                <div class="row row-break actions">
+                    <div class="col create-btn" onclick="actionHandler(true)">
+                        <h2>Create New Palette</h2>
+                    </div>
+                    <div class="col upload-btn" onclick="actionHandler(false)">
+                        <h2>Upload Config</h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col landing-graphic">
+                <img class="landing-img" src="src/landing_graphic.png" alt="Landing Graphic">
+                <p class="attribution">
+                    Check out the original work from freekpik
+                    <a href="http://www.freepik.com">Designed by pch.vector / Freepik</a>
+                </p>
+            </div>
+        </div>
+        <!-- END OF LANDING PAGE -->
+
+        <!-- PALETTE CREATOR -->
+        <div id="paletteCreator" class="row row-break">
+            <div class="col color-panel">
+                <h1>Choose your palette</h1>
+                <span id="paletteMsg">Start off by choosing a primary color</span>
+                <hr width="100%">
+
+                <div class="palette scrollable-container">
+                    <div class="row palette-item unlocked">
+                        <div class="col palette-text">
+                            <h2>Primary color</h2>
+                            ℹ The heart and soul of your palette
+                        </div>
+                        <input class="color-picker" type="color" name="primary" id="primaryColor"
+                            onchange="enableInput('secondaryColor','secondaryContainer')">
+                    </div>
+
+
+                    <div class="row palette-item locked" id="secondaryContainer">
+                        <div class="col palette-text">
+                            <h2>Secondary color</h2>
+                            ℹ The color thats always there for you
+                        </div>
+                        <input class="color-picker" type="color" name="primary" id="secondaryColor"
+                            onchange="enableInput('textColor','textContainer')" disabled>
+                    </div>
+
+                    <div class="row palette-item locked" id="textContainer">
+                        <div class="col palette-text">
+                            <h2>Text color</h2>
+                            ℹ Classic B&W or just mix it up
+                        </div>
+                        <input class="color-picker" type="color" name="primary" id="textColor"
+                            onchange="enableInput('bgColor','bgContainer')" disabled>
+                    </div>
+
+                    <div class="row palette-item locked" id="bgContainer">
+                        <div class="col palette-text">
+                            <h2>Background color</h2>
+                            ℹ The color of your canvas in which to paint your art
+                        </div>
+                        <input class="color-picker" type="color" name="primary" id="bgColor" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col output-panel">
+                <h1>Components</h1>
+                <span> View the components with your palette applied </span>
+                <hr width="100%">
+
+                <div class="scrollable-container">
+                </div>
+            </div>
+        </div>
+        <!-- END OF PALETTE CREATOR -->
+
+        <!-- CONFIG UPLOADER -->
+        <div id="configUploader" class="row">
+            <div class="col">
+                <h1>Uploading config</h1>
+
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player id="loadingAnimation" src="https://assets9.lottiefiles.com/packages/lf20_gopx2kp5.json"
+                    background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+                </lottie-player>
+
+                <h4>Your palette is loading</h4>
+            </div>
+        </div>
+        <!-- END OF CONFIG UPLOADER -->
+
+        <!--  -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        © Designed by <a href="https://hvkalayil.github.io/">HVK</a> with ♥
+    </footer>
+</body>
+
+</html>
